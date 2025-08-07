@@ -1,8 +1,17 @@
 import { useEffect, useState, useRef } from 'react';
 import { PitchDetector } from 'pitchy';
 
-export function usePitch(threshold = 0.5) {
-  const [frequency, setFrequency] = useState<number | null>(null);
+interface PitchData {
+  frequency: number | null;
+  clarity: number | null;
+}
+
+export function usePitch(threshold = 0.5): PitchData {
+  const [pitchData, setPitchData] = useState<PitchData>({
+    frequency: null,
+    clarity: null,
+  });
+
   const lastFreqRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -11,6 +20,7 @@ export function usePitch(threshold = 0.5) {
     let dataArray: Float32Array;
     let source: MediaStreamAudioSourceNode;
     let detector: ReturnType<typeof PitchDetector.forFloat32Array>;
+    let isMounted = true;
 
     async function start() {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -26,15 +36,19 @@ export function usePitch(threshold = 0.5) {
       detector = PitchDetector.forFloat32Array(analyser.fftSize);
 
       function update() {
+        if (!isMounted) return;
+
         analyser.getFloatTimeDomainData(dataArray);
         const [pitch, clarity] = detector.findPitch(dataArray, sampleRate);
 
-        if (clarity > 0.9 && pitch > 20) {
+        if (clarity > 0.98 && pitch > 20) {
           const lastFreq = lastFreqRef.current;
           if (lastFreq === null || Math.abs(lastFreq - pitch) > threshold) {
             lastFreqRef.current = pitch;
-            setFrequency(pitch);
+            setPitchData({ frequency: pitch, clarity });
           }
+        } else {
+          setPitchData({ frequency: null, clarity });
         }
 
         requestAnimationFrame(update);
@@ -46,9 +60,10 @@ export function usePitch(threshold = 0.5) {
     start();
 
     return () => {
+      isMounted = false;
       audioContext?.close();
     };
   }, [threshold]);
 
-  return frequency;
+  return pitchData;
 }
