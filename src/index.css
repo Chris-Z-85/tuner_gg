@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
-@theme {
-  --animate-strobe-left: strobe-left 1s linear infinite;
-  --animate-strobe-right: strobe-right 1s linear infinite;
-
-  @keyframes strobe-left {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-  }
-  @keyframes strobe-right {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0%); }
-  }
+.strobe-left {
+  animation: strobe-left 1s linear infinite;
+}
+.strobe-right {
+  animation: strobe-right 1s linear infinite;
 }
 
+@font-face {
+  font-family: "Digital7";
+  src: url("/fonts/Digital7.woff2") format("woff2");
+}
 
-.strobe-left {
-    animation: strobe-left 1s linear infinite;
-  }
-  .strobe-right {
-    animation: strobe-right 1s linear infinite;
-  }
+.lcd-font {
+  font-family: "Digital7", monospace;
+  text-align: center;
+}
+
+@keyframes strobeMove {
+  0%, 100% { opacity: .18; }
+  40% { opacity: 1; }
+}
+.strobe-dot {
+  animation: strobeMove 0.9s linear infinite;
+}
