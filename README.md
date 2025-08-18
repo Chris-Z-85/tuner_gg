@@ -23,8 +23,9 @@ https://tuner-gg.netlify.app
 ---
 
 ## 🖼 Screenshots
-
-- `screenshots/tuner_gg.png` — Idle / mic off
+| Preview                       
+| --------------------------------------- 
+| ![Light Mode](./screenshots/tuner_gg.png) 
 
 ---
 
