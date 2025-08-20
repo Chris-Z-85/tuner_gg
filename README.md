@@ -1,6 +1,6 @@
 # 🎵 The Guitar Tuner
 
-> A precise, accessible tuner built with **Vite, React, and Tailwind CSS **, combining modern web tech with a musician-friendly interface for reliable pitch detection anywhere.
+> A precise, accessible tuner built with **Vite, React, and Tailwind CSS**, combining modern web tech with a musician-friendly interface for reliable pitch detection anywhere.
 
 ![License](https://img.shields.io/github/license/Chris-Z-85/tuner_gg)
 ![Issues](https://img.shields.io/github/issues/Chris-Z-85/tuner_gg)
@@ -49,7 +49,7 @@
 ### 1️⃣ Clone the repo
 
 ```bash
-git clone https://github.com/Chris-Z-85/metronome_gg.git
+git clone https://github.com/Chris-Z-85/tuner_gg.git
 cd metronome_gg
 ```
 
