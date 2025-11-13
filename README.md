@@ -20,8 +20,7 @@
 - 🎛️ **Arched strobe panel** that scrolls right when sharp, left when flat
 - 🔠 **Large note display** with smart `♯ / ♭` accidental
 - 🎚️ **Pedal footswitch** (pressed = tuner+mic ON; unpressed = OFF)
-- 🖼️ **SVG pedal outline** with precise “screen” and “footswitch” slots
-- 🛠️ **Debug overlays** to fine-tune slot positions inside the SVG
+- 🖼️ **3D pedal outline** with precise “screen” and “footswitch” slots
 - 🌐 **Responsive & accessible** (keyboard toggle, `aria-pressed`, focus ring)
 
 ---
