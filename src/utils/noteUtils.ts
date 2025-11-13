@@ -7,11 +7,11 @@ export const standardTuning = [
     { name: 'B', octave: 3, frequency: 246.94 },
     { name: 'e', octave: 4, frequency: 329.63 },
   ];
-  
+
   export function getNearestString(frequency: number) {
     let closest = standardTuning[0];
     let minDiff = Math.abs(frequency - closest.frequency);
-  
+
     for (const string of standardTuning) {
       const diff = Math.abs(frequency - string.frequency);
       if (diff < minDiff) {
@@ -26,4 +26,3 @@ export const standardTuning = [
       centsOff: 1200 * Math.log2(frequency / closest.frequency),
     };
   }
-  

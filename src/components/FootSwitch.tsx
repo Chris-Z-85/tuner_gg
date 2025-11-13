@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { useState } from "react";
 
 type Props = {
@@ -17,8 +16,6 @@ type Props = {
 };
 
 export default function FootSwitch({
-  fit = true,
-  size = 88,
   pressed,
   defaultPressed = false,
   momentary = false,
@@ -36,21 +33,12 @@ export default function FootSwitch({
     onChange?.(v);
   };
 
-  type CSSVars = React.CSSProperties & { ['--sz']?: string };
-  const style: CSSVars | undefined = fit ? undefined : { ['--sz']: `${size}px` };
-  const box = fit ? "w-full h-full" : "w-[var(--sz)] h-[var(--sz)]";
 
   return (
     <button
       type="button"
       aria-pressed={isPressed}
-      style={style}
-      className={clsx(
-        "relative select-none rounded-full focus:outline-none",
-        fit ? "block w-full h-full" : "inline-block",
-        "focus-visible:ring-2 focus-visible:ring-cyan-400/70",
-        className
-      )}
+      className={className}
       onClick={() => !momentary && setPressed(!isPressed)}
       onPointerDown={() => momentary && setPressed(true)}
       onPointerUp={() => momentary && setPressed(false)}
@@ -67,7 +55,7 @@ export default function FootSwitch({
       }}
       onKeyUp={() => momentary && setPressed(false)}
     >
-      <div className={clsx("relative", box)}>
+      <div className="w-full h-full">
         <svg viewBox="0 0 100 100" className="block w-full h-full">
           <polygon
             points="25,6 75,6 95,50 75,94 25,94 5,50"

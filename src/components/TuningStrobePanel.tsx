@@ -85,7 +85,6 @@ export default function TuningStrobePanel({ cents, className, height }: Props) {
     });
   };
 
- 
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
