@@ -6,7 +6,6 @@ type Props = {
   height?: number | string;
 };
 
-
 const LEDS = 24;
 
 // SVG geometry

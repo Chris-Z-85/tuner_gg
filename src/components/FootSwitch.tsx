@@ -21,10 +21,6 @@ export default function FootSwitch({
   momentary = false,
   onChange,
   className,
-  hexColor = "#ffffff",
-  ringColor = "#ffffff",
-  upFill = "#f2f2f4",
-  downFill = "#bdbdbf",
 }: Props) {
   const [local, setLocal] = useState(defaultPressed);
   const isPressed = pressed ?? local;
@@ -32,7 +28,6 @@ export default function FootSwitch({
     if (pressed === undefined) setLocal(v);
     onChange?.(v);
   };
-
 
   return (
     <button
@@ -55,24 +50,9 @@ export default function FootSwitch({
       }}
       onKeyUp={() => momentary && setPressed(false)}
     >
-      <div className="w-full h-full">
-        <svg viewBox="0 0 100 100" className="block w-full h-full">
-          <polygon
-            points="25,6 75,6 95,50 75,94 25,94 5,50"
-            fill="none"
-            stroke={hexColor}
-            strokeWidth={2}
-            strokeLinejoin="round"
-          />
-          <circle cx="50" cy="50" r="26" fill="none" stroke={ringColor} strokeWidth={9} />
-          <g>
-            <circle cx="50" cy="50" r="20" fill={isPressed ? downFill : upFill} />
-            {!isPressed && (
-              <ellipse cx="44" cy="42" rx="9" ry="5" fill="#ffffff" opacity="0.35" />
-            )}
-          </g>
-        </svg>
-      </div>
+      <span className="stomp-base">
+        <span className="stomp-top"></span>
+      </span>
     </button>
   );
 }
