@@ -20,7 +20,6 @@ export default function Tuner({ enabled = true }: { enabled?: boolean }) {
   const silenceTimerRef = useRef<number | null>(null);
 
   const hasValidPitch = clarity !== null && clarity > 0.9 && frequency !== null;
-  const silentMode = !hasValidPitch;
 
   useEffect(() => {
     if (!hasValidPitch) return;
@@ -54,22 +53,24 @@ export default function Tuner({ enabled = true }: { enabled?: boolean }) {
 
   const displayString = hasValidPitch ? (tuning?.string ?? lastString) : (expired ? null : lastString);
   const centsRounded = Math.round(stableCents ?? 0);
-  const showStrobe = !silentMode && Math.abs(stableCents ?? 0) > 5;
+  const showStrobe = hasValidPitch && Math.abs(stableCents ?? 0) > 5;
   const accidental = hasValidPitch
     ? (centsRounded > 0 ? "♯" : centsRounded < 0 ? "♭" : "")
     : "";
 
   return (
-    <div className="w-[300px] h-[800px] flex flex-col items-center justify-between pedal-3d">
+    <div className="w-[min(90vw,520px)] h-[min(90vh,860px)] max-h-[860px] flex flex-col items-center justify-between pedal-3d">
+      <div className='flex flex-col items-center w-full flex-1 justify-center gap-4'>
       <Display
         showStrobe={showStrobe}
         stableCents={stableCents}
         displayString={displayString}
         accidental={accidental}
       />
-      <div className='flex flex-col items-center w-full h-full justify-center'>
         <PowerLED on={tunerEnabled && enabled} />
-        <FootSwitch fit pressed={pressed} onChange={setPressed} />
+      </div>
+      <div className='flex flex-col items-center w-full flex-1 justify-center'>
+        <FootSwitch pressed={pressed} onChange={setPressed} />
       </div>
     </div>
   );

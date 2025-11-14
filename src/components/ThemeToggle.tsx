@@ -12,7 +12,7 @@ export function ThemeToggle({ isCollapsed }: ThemeToggleProps) {
     <div className="flex self-end">
       <div
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className={`flex items-center gap-3 ml-auto p-7 ${isCollapsed ? "justify-center" : ""}`}
+        className={`flex items-center gap-3 ml-auto p-2 sm:p-7 ${isCollapsed ? "justify-center" : ""}`}
       >
         {theme === "light" ? (
           <FaMoon aria-label="Switch to dark mode" />

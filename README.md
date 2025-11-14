@@ -49,7 +49,7 @@
 
 ```bash
 git clone https://github.com/Chris-Z-85/tuner_gg.git
-cd metronome_gg
+cd tuner_gg
 ```
 
 ### 2️⃣ Install dependencies

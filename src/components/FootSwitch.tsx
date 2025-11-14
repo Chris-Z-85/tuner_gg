@@ -1,18 +1,11 @@
 import { useState } from "react";
 
 type Props = {
-  fit?: boolean;
-  size?: number;
   pressed?: boolean;
   defaultPressed?: boolean;
   momentary?: boolean;
   onChange?: (v: boolean) => void;
   className?: string;
-
-  hexColor?: string;
-  ringColor?: string;
-  upFill?: string;
-  downFill?: string;
 };
 
 export default function FootSwitch({
