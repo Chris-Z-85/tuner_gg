@@ -2,8 +2,8 @@
 
 > A precise, accessible tuner built with **Vite, React, and Tailwind CSS**, combining modern web tech with a musician-friendly interface for reliable pitch detection.
 
-![License](https://img.shields.io/github/license/Chris-Z-85/tuner_gg?_=1)
-![Issues](https://img.shields.io/github/issues/Chris-Z-85/tuner_gg)
+![License](https://img.shields.io/github/license/Chris-Zbrojkiewicz/tuner_gg?_=1)
+![Issues](https://img.shields.io/github/issues/Chris-Zbrojkiewicz/tuner_gg)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 ---
@@ -48,7 +48,7 @@
 ### 1️⃣ Clone the repo
 
 ```bash
-git clone https://github.com/Chris-Z-85/tuner_gg.git
+git clone https://github.com/Chris-Zbrojkiewicz/tuner_gg.git
 cd tuner_gg
 ```
 
@@ -103,7 +103,7 @@ This project is licensed under the MIT License — see LICENSE for details.
 Chris Z
 📧 chris.z@aol.com
 🌐 https://chris-z.dev/
-🐙 GitHub: Chris-Z-85
+🐙 GitHub: Chris-Zbrojkiewicz
 
 ## ⭐️ Show Your Support
 
