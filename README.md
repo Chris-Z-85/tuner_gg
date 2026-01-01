@@ -2,9 +2,7 @@
 
 The Guitar Tuner is a browser-based tuning tool designed for guitarists who want quick, reliable tuning without installing dedicated software. It provides clear visual feedback and responsive interaction to support fast adjustments during practice. The project was built to explore low-latency audio processing in the browser and simple, readable UI design.
 
-| Preview  
-| ---------------------------------------
-| ![Light Mode](./screenshots/tuner_gg.png)
+![Dark Mode](./screenshots/tuner_gg.png)
 
 ## Deployed
 
@@ -13,7 +11,7 @@ The Guitar Tuner is a browser-based tuning tool designed for guitarists who want
 
 ## Features
 
-- Real-time pitch detection (Web Audio API + [`pitchy`](https://github.com/ianprime0509/pitchy))
+- Real-time pitch detection using the Web Audio API and **pitchy**
 - Arched strobe panel that scrolls right when sharp, left when flat
 - Large note display with smart `♯ / ♭` accidental
 - Pedal footswitch (pressed = tuner+mic ON; unpressed = OFF)
@@ -26,5 +24,6 @@ The Guitar Tuner is a browser-based tuning tool designed for guitarists who want
 - React
 - Typescript
 - Vite
+- Web Audio API
 - Pitchy
 - Tailwind CSS
