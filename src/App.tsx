@@ -2,6 +2,7 @@ import './index.css';
 import { ThemeToggle } from './components/ThemeToggle';
 import Tuner from './components/Tuner';
 import { useTheme } from './hooks/useTheme';
+import Footer from './components/Footer';
 
 export default function App() {
   const { theme } = useTheme();
@@ -16,9 +17,7 @@ export default function App() {
       <div className="flex-1 flex items-center justify-center w-full">
         <Tuner />
       </div>
-      <footer className="text-center text-xs sm:text-sm text-muted-foreground py-2 sm:py-4 w-full">
-        © 2025 <a href="https://chris-z.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Chris Zbrojkiewicz</a>
-      </footer>
+      <Footer />
     </div>
   );
 }
