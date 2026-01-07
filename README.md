@@ -2,7 +2,9 @@
 
 The Guitar Tuner is a browser-based tuning tool designed for guitarists who want quick, reliable tuning without installing dedicated software. It provides clear visual feedback and responsive interaction to support fast adjustments during practice. The project was built to explore low-latency audio processing in the browser and simple, readable UI design.
 
-![Dark Mode](./screenshots/tuner_gg.png)
+| Light Mode                             | Dark Mode                            |
+| -------------------------------------- | ------------------------------------ |
+| ![Light Mode](./screenshots/light.png) | ![Dark Mode](./screenshots/dark.png) |
 
 ## Deployed
 
